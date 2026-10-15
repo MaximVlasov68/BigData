@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8"/>
+		<meta content="width=device-width, initial-scale=1" name="viewport"/>
+		<meta content="Аналитический отчет по статистике футболистов с pandas" name="description"/>
+		<title>
+			Статистика футболистов — Индивидуальное задание
+		</title>
+		<link href="style.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<header class="hero">
+			<div class="container">
+				<div class="top">
+					<div class="logo">
+						BIG DATA / PANDAS
+					</div>
+					<nav>
+						<a href="#method">
+							Методика
+						</a>
+						<a href="#participants">
+							Графики
+						</a>
+						<a href="#findings">
+							Выводы
+						</a>
+					</nav>
+				</div>
+				<div class="hero-inner">
+					<div aria-label="Место для фотографии" class="avatar placeholder">
+						<img  src="images/avatar.webp" alt="avatar" class="ava">
+					</div>
+					<div>
+						<div class="eyebrow">
+							Системы больших данных · Индивидуальное задание
+						</div>
+						<h1>
+							Статистика футболистов: от сырых данных к выводам
+						</h1>
+						<p class="lead">
+							Автор: Власов Максим Николаевич · Группа: ИСТZS-3401
+							<br/>
+							Анализ CSV с помощью Python, pandas, seaborn и matplotlib.
+						</p>
+					</div>
+				</div>
+				<div class="stats">
+					<div class="stat">
+						<div class="num">
+							1039
+						</div>
+						<div class="small">
+							Записей об игроках
+						</div>
+					</div>
+					<div class="stat">
+						<div class="num">
+							48
+						</div>
+						<div class="small">
+							Сборных
+						</div>
+					</div>
+					<div class="stat">
+						<div class="num">
+							295
+						</div>
+						<div class="small">
+							Голов в строках игроков
+						</div>
+					</div>
+					<div class="stat">
+						<div class="num">
+							10
+						</div>
+						<div class="small">
+							Аналитических графиков
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section id="method">
+			<div class="container">
+				<div class="eyebrow">
+					ПОДГОТОВКА ДАННЫХ
+				</div>
+				<h2>
+					Методика исследования
+				</h2>
+				<p class="section-intro">
+					Источник: предоставленный файл wcplayerstatistics2026.csv. Исследуются количество матчей, игровое время, позиции, голы, ассисты, возраст и дисциплинарная статистика.
+				</p>
+				<div class="steps">
+					<div class="step">
+						<b>
+							01 · Очистка
+						</b>
+						<p>
+							Удаление пустых строк, повторов и неверных ключевых записей; приведение типов, обработка отсутствующего клуба и второй позиции.
+						</p>
+					</div>
+					<div class="step">
+						<b>
+							02 · Нормализация
+						</b>
+						<p>
+							Min–max нормализация выбранных числовых показателей в диапазон [0, 1]. Расчет голов и передач на 90 минут.
+						</p>
+					</div>
+					<div class="step">
+						<b>
+							03 · Анализ
+						</b>
+						<p>
+							Группировка pandas по сборным и позициям, сравнение игроков, визуализации и интерпретация ограничений.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="participants">
+			<div class="container">
+				<div class="eyebrow">
+					АНАЛИТИКА
+				</div>
+				<h2>
+					Состав участников
+				</h2>
+				<p class="section-intro">
+					Кто представлен в выборке: возраст и игровые позиции.
+				</p>
+				<div class="grid">
+					<article class="card">
+						<img alt="Возраст игроков" loading="lazy" src="images/chart_01.png"/>
+						<div class="body">
+							<h3>
+								Возраст игроков
+							</h3>
+							<p>
+								Гистограмма распределения футболистов по возрасту; помогает определить преобладающие возрастные группы.
+							</p>
+						</div>
+					</article>
+					<article class="card">
+						<img alt="Распределение по позициям" loading="lazy" src="images/chart_02.png"/>
+						<div class="body">
+							<h3>
+								Распределение по позициям
+							</h3>
+							<p>
+								Сравнение представленности игровых амплуа в наборе данных.
+							</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+		<section id="results">
+			<div class="container">
+				<div class="eyebrow">
+					АНАЛИТИКА
+				</div>
+				<h2>
+					Результативность
+				</h2>
+				<p class="section-intro">
+					Сравнение сборных и игроков по голам, передачам и результативности на 90 минут.
+				</p>
+				<div class="grid">
+					<article class="card">
+						<img alt="Лидеры среди сборных" loading="lazy" src="images/chart_03.png"/>
+						<div class="body">
+							<h3>
+								Лидеры среди сборных
+							</h3>
+							<p>
+								Сумма голов, записанных за футболистами каждой сборной в файле; не обязательно эквивалент официальному протоколу.
+							</p>
+						</div>
+					</article>
+					<article class="card">
+						<img alt="Топ бомбардиров" loading="lazy" src="images/chart_04.png"/>
+						<div class="body">
+							<h3>
+								Топ бомбардиров
+							</h3>
+							<p>
+								Абсолютное количество голов. Время на поле здесь не учитывается.
+							</p>
+						</div>
+					</article>
+					<article class="card">
+						<img alt="Топ ассистентов" loading="lazy" src="images/chart_05.png"/>
+						<div class="body">
+							<h3>
+								Топ ассистентов
+							</h3>
+							<p>
+								Показывает игроков, которые чаще всего создавали голы для партнёров по данным файла.
+							</p>
+						</div>
+					</article>
+					<article class="card">
+						<img alt="Эффективность за 90 минут" loading="lazy" src="images/chart_06.png"/>
+						<div class="body">
+							<h3>
+								Эффективность за 90 минут
+							</h3>
+							<p>
+								Нормировка на игровое время. Игроки с менее чем 180 минутами исключены из этого рейтинга для уменьшения эффекта малой выборки.
+							</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+		<section id="relations">
+			<div class="container">
+				<div class="eyebrow">
+					АНАЛИТИКА
+				</div>
+				<h2>
+					Взаимосвязи
+				</h2>
+				<p class="section-intro">
+					Сопоставление времени на поле, игровой позиции, возраста и игровых результатов.
+				</p>
+				<div class="grid">
+					<article class="card">
+						<img alt="Игровое время и голы" loading="lazy" src="images/chart_07.png"/>
+						<div class="body">
+							<h3>
+								Игровое время и голы
+							</h3>
+							<p>
+								Диаграмма рассеяния помогает увидеть, что большое число сыгранных минут не гарантирует высокую результативность.
+							</p>
+						</div>
+					</article>
+					<article class="card">
+						<img alt="Вклад амплуа в результат" loading="lazy" src="images/chart_08.png"/>
+						<div class="body">
+							<h3>
+								Вклад амплуа в результат
+							</h3>
+							<p>
+								Совокупное количество голов и ассистов игроков каждого амплуа. Размер групп разный, поэтому это не рейтинг средней эффективности.
+							</p>
+						</div>
+					</article>
+					<article class="card">
+						<img alt="Возраст по амплуа" loading="lazy" src="images/chart_09.png"/>
+						<div class="body">
+							<h3>
+								Возраст по амплуа
+							</h3>
+							<p>
+								Медиана, квартили и возможные экстремальные значения возраста в четырёх игровых группах.
+							</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+		<section id="discipline">
+			<div class="container">
+				<div class="eyebrow">
+					АНАЛИТИКА
+				</div>
+				<h2>
+					Дисциплина
+				</h2>
+				<p class="section-intro">
+					Дисциплинарные показатели сборных по числу карточек.
+				</p>
+				<div class="grid">
+					<article class="card">
+						<img alt="Карточки команд" loading="lazy" src="images/chart_10.png"/>
+						<div class="body">
+							<h3>
+								Карточки команд
+							</h3>
+							<p>
+								Сумма предупреждений и удалений игроков по сборным; не учитывает количество проведённых каждой сборной матчей.
+							</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+		<section id="findings">
+			<div class="container">
+				<div class="eyebrow">
+					ИТОГИ
+				</div>
+				<h2>
+					Выводы исследования
+				</h2>
+				<ul>
+					<li>
+						Проанализировано 1039 строк об игроках 48 сборных. Средний возраст — 27.5 года.
+					</li>
+					<li>
+						Самое многочисленное амплуа — MF: 392 игроков. Размеры групп различаются, поэтому абсолютные суммы голов требуют контекста.
+					</li>
+					<li>
+						Лидер по числу голов — Kylian Mbappé: 10 голов. Среди сборных по сумме голов игроков лидирует France (20).
+					</li>
+					<li>
+						Без забитых голов в файле — 82.8% футболистов. Это ожидаемо для статистики, охватывающей защитников, полузащитников и вратарей, а также игроков с разным временем на поле.
+					</li>
+					<li>
+						Для сопоставления эффективности рассчитаны действия за 90 минут; в соответствующий график включены только 532 игрока с 180+ минутами.
+					</li>
+					<li>
+						Наблюдаемые различия могут объясняться амплуа, количеством проведённых минут и неодинаковым количеством игр; графики показывают связи, но сами по себе не доказывают причинность.
+					</li>
+					<li>
+						Ограничения: это срез предоставленного CSV без поматчевой динамики, соперников и подтверждения официального происхождения; выводы не следует распространять за пределы файла.
+					</li>
+				</ul>
+				<div class="notice">
+					Важно: числовые результаты вычислены из предоставленного CSV. Официальность, полнота и достоверность статистики турнира внешними источниками не подтверждались.
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				Власов Максим Николаевич · ИСТZS-3401 · Учебный аналитический проект · Python / pandas
+			</div>
+		</footer>
+	</body>
+</html>
